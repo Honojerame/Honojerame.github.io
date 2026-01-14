@@ -1984,6 +1984,155 @@ a.brand:focus {
 /*  5. Responsive styles
 /* ------------------------------------------------------------------------------- */
 
+/* 5.0 Mobile-first styles (default for small screens) */
+
+@media (max-width: 575px) {
+
+  html {
+    font-size: 11px;
+  }
+
+  body {
+    font-size: 0.95rem;
+  }
+
+  h1,
+  .h1 {
+    font-size: 1.857rem;
+    margin: 0.3em 0;
+  }
+
+  h2,
+  .h2 {
+    font-size: 1.714rem;
+    margin: 1.5rem 0;
+  }
+
+  h3,
+  .h3 {
+    font-size: 1.357rem;
+    margin: 1.5rem 0;
+  }
+
+  h4,
+  .h4 {
+    font-size: 1.142rem;
+    margin: 1.5rem 0;
+  }
+
+  h5,
+  .h5 {
+    font-size: 1.071rem;
+    margin: 1.5rem 0;
+  }
+
+  h6,
+  .h6 {
+    font-size: 0.928rem;
+    margin: 1.5rem 0;
+  }
+
+  blockquote {
+    font-size: 1.142rem;
+    padding-left: 3rem;
+    width: 90%;
+  }
+
+  .navbar {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .boxed {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .right-boxed {
+    right: 1.2rem !important;
+  }
+
+  .left-boxed {
+    left: 1.2rem !important;
+  }
+
+  .brand-name {
+    font-size: 1.214rem;
+  }
+
+  .brand-text {
+    font-size: 0.7rem;
+  }
+
+  .social-list a {
+    font-size: 1.142rem;
+    margin-left: 1.2rem;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .menu-list>li {
+    font-size: 1.214rem;
+  }
+
+  .contacts {
+    display: none;
+  }
+
+  .project-detail-text {
+    font-size: 0.95rem;
+  }
+
+  .social-list-detail a {
+    font-size: 1.5rem;
+  }
+
+  .col-project-info h5 {
+    font-size: 0.95rem;
+  }
+
+  button,
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.9em 1.8em 0.85em;
+  }
+
+  input[type='text'],
+  input[type='address'],
+  input[type='url'],
+  input[type='password'],
+  input[type='email'],
+  input[type="search"],
+  input[type="tel"],
+  textarea {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  textarea {
+    height: 12rem;
+  }
+
+  .ion-ios-play {
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    font-size: 1.1rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+  }
+
+  .navbar-toggle {
+    margin-top: 0.5rem;
+  }
+
+  .navbar-toggle .icon-bar {
+    width: 20px;
+  }
+
+}
 
 
 /* 5.1 Min width 576px */
