@@ -2115,6 +2115,11 @@ a.brand:focus {
     height: 12rem;
   }
 
+  .display-2 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+
   .ion-ios-play {
     width: 3.5rem;
     height: 3.5rem;
