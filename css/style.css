@@ -1937,6 +1937,31 @@ a.brand:focus {
   z-index: -2;
 }
 
+.amhs-hero {
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(120deg, rgba(2, 8, 7, 0.96), rgba(7, 42, 35, 0.86)),
+    repeating-linear-gradient(90deg, transparent 0, transparent 79px, rgba(127, 255, 196, 0.08) 80px);
+}
+
+.amhs-hero::before {
+  content: "OHT-01     ◆ FOUP     OHT-02";
+  position: absolute;
+  top: 38%;
+  left: 8%;
+  right: 8%;
+  padding: 2rem 0;
+  border-top: 8px solid rgba(127, 255, 196, 0.5);
+  color: #7fffc4;
+  font: 700 1.1rem/1.2 monospace;
+  letter-spacing: 0.18em;
+  text-align: center;
+  text-shadow: 0 0 18px rgba(127, 255, 196, 0.8);
+}
+
 /* this is the original image holder setting used for project pages*/
 /* .image-holder {
   display: block;
