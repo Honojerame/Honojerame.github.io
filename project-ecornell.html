@@ -1,133 +1,44 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover">
-  <meta name="description" content="eCornell Final Project details">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b100e">
+  <meta name="description" content="A direct comparison of a TF–IDF logistic-regression baseline and a bidirectional LSTM for classifying book-review sentiment.">
   <meta name="author" content="Precious Onojerame">
-
-  <!-- Favicons -->
-  <link rel="shortcut icon" href="favicon.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
-
-  <title>eCornell Final Project</title>
-
-  <!-- Styles -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400i&display=swap" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet" media="screen">
+  <title>Book Review Sentiment Classifier | Precious Onojerame</title>
+  <link rel="canonical" href="https://honojerame.github.io/project-ecornell.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Book Review Sentiment Classifier | Precious Onojerame">
+  <meta property="og:description" content="A direct comparison of a TF–IDF logistic-regression baseline and a bidirectional LSTM for classifying book-review sentiment.">
+  <meta property="og:url" content="https://honojerame.github.io/project-ecornell.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Book Review Sentiment Classifier | Precious Onojerame">
+  <meta name="twitter:description" content="A direct comparison of a TF–IDF logistic-regression baseline and a bidirectional LSTM for classifying book-review sentiment.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.png" sizes="any">
+  <link rel="preload" href="fonts/poppins-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/portfolio.css">
+  <script src="assets/portfolio.js" defer></script>
 </head>
-
 <body>
-  <div class="animsition">
-    <div class="loader">
-      <div class="spinner">
-        <div class="double-bounce1"></div>
-        <div class="double-bounce2"></div>
-      </div>
-    </div>
-
-    <div class="click-capture"></div>
-
-    <div class="menu">
-      <span class="close-menu icon-cross2 right-boxed"></span>
-      <ul class="menu-list right-boxed">
-        <li data-menuanchor="page1"><a href="index.html#page1">Home</a></li>
-        <li data-menuanchor="page2"><a href="index.html#page2">Specialization</a></li>
-        <li data-menuanchor="page3"><a href="index.html#page3">Resume</a></li>
-        <li data-menuanchor="page4"><a href="index.html#page4">About</a></li>
-        <li data-menuanchor="page5"><a href="index.html#page5">Projects</a></li>
-        <li data-menuanchor="page7"><a href="index.html#page7">Testimonials</a></li>
-        <li data-menuanchor="page8"><a href="index.html#page8">Contact</a></li>
-      </ul>
-      <div class="menu-footer right-boxed">
-        <div class="social-list">
-          <a href="https://twitter.com/Honojerame" target="_blank" class="icon ion-social-twitter"></a>
-          <a href="https://www.facebook.com/profile.php?id=100074418820867" target="_blank" class="icon ion-social-facebook"></a>
-          <a href="https://github.com/Honojerame" target="_blank" class="icon ion-social-github"></a>
-          <a href="https://www.linkedin.com/in/precious-onojerame-880498183/" target="_blank" class="icon ion-social-linkedin"></a>
-        </div>
-        <div class="copy">© Precious 2022. All Rights Reseverd<br> Design by Precious</div>
-      </div>
-    </div>
-
-    <header class="navbar boxed">
-      <div class="navbar-bg"></div>
-      <a class="brand" href="index.html#page1">
-        <img class="brand-img" alt="" src="images/brand.png">
-        <div class="brand-info">
-          <div class="brand-name">Precious</div>
-        </div>
-      </a>
-
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <div class="contacts d-none d-md-block">
-        <div class="contact-item">+1 505-415-3123</div>
-        <div class="contact-item spacer">/</div>
-        <div class="contact-item"><a href="mailto:preciousonoj@gmail.com">preciousonoj@gmail.com</a></div>
-      </div>
-    </header>
-
-    <img alt="eCornell data dashboard" class="image-holder wow fadeIn" style="filter: brightness(55%);" src="images/bg/bg-ecornell.jpg">
-
-    <div class="content">
-      <div class="container">
-        <div class="row row-project">
-          <div class="col-project-name col-md-6  mt-5 mb-5 mb-md-0">
-            <h1>eCornell Final Project</h1>
-            <div class="social-list social-list-detail">
-              <a href="https://twitter.com/Honojerame" target="_blank" class="icon ion-social-twitter"></a>
-              <a href="https://www.facebook.com/profile.php?id=100074418820867" target="_blank" class="icon ion-social-facebook"></a>
-              <a href="https://github.com/Honojerame" target="_blank" class="icon ion-social-github"></a>
-              <a href="https://www.linkedin.com/in/precious-onojerame-880498183/" target="_blank" class="icon ion-social-linkedin"></a>
-            </div>
-          </div>
-
-          <div class="col-project-info col-md-6">
-            <div class="row pp-scrollable">
-              <div class="col-md-6 mt-5">
-                <h5>Client</h5>
-                <p class="smalltext">eCornell capstone</p>
-              </div>
-              <div class="col-md-6 mt-5">
-                <h5>Team</h5>
-                <p class="smalltext">Precious Onojerame</p>
-              </div>
-              <div class="col-md-6 mt-5">
-                <h5>Services</h5>
-                <p class="smalltext">EDA & visualization<br>Predictive modeling</p>
-              </div>
-              <div class="col-md-6 mt-5">
-                <h5>Date</h5>
-                <p class="smalltext">2024</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <p class="project-detail-text text-center">A data science capstone delivering exploratory analysis, feature engineering, and supervised learning to surface actionable insights. The project documents the pipeline, evaluation metrics, and recommendations for business stakeholders.<br><br>
-          <a style="margin-bottom: 180px;" href="https://github.com/Honojerame/eCornell_Final_Project" target="_blank" class="btn">Github-link</a>
-        </p>
-      </div>
-    </div>
+<a class="skip-link" href="#main">Skip to content</a><header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Precious Onojerame, home"><span class="monogram" aria-hidden="true">PO</span><span class="brand-name">Precious Onojerame<span class="brand-period accent">.</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" hidden>Menu +</button>
+    <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
+      <a href="projects.html" aria-current="true">Work</a><a href="index.html#about">About</a><a href="index.html#experience">Experience</a><a href="index.html#contact">Contact</a>
+      <a class="nav-outbound" href="https://github.com/Honojerame" target="_blank" rel="noopener noreferrer">GitHub<span class="arrow" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+    </nav>
   </div>
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/wow.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/smoothscroll.js"></script>
-  <script src="js/animsition.js"></script>
-  <script src="js/scripts.js"></script>
+</header><main id="main"><section class="page-intro"><div class="container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="projects.html">Work</a><span aria-hidden="true">/</span><span aria-current="page">Book Review Sentiment Classifier</span></nav><p class="eyebrow">Machine learning / NLP</p><h1>Book Review Sentiment Classifier</h1><p class="intro-text">A direct comparison of a TF–IDF logistic-regression baseline and a bidirectional LSTM for classifying book-review sentiment.</p></div></section>
+<div class="container"><div class="detail-hero"><div class="project-visual"><svg class="project-svg" viewBox="0 0 500 210" role="img" aria-labelledby="detail-ecornell-title"><title id="detail-ecornell-title">Book review text is classified using a TF-IDF logistic regression baseline and a bidirectional LSTM.</title><text class="svg-small" x="22" y="25">BOOK REVIEW CLASSIFICATION</text><rect x="24" y="77" width="116" height="55" rx="3"/><text x="82" y="101" text-anchor="middle">REVIEW</text><text class="svg-small" x="82" y="119" text-anchor="middle">TEXT INPUT</text><path d="M140 104h34l33-44h33 M174 104l33 44h33"/><rect x="240" y="39" width="145" height="44" rx="3"/><text x="312" y="65" text-anchor="middle">TF–IDF + LOGREG</text><rect x="240" y="127" width="145" height="44" rx="3"/><text x="312" y="154" text-anchor="middle">BiLSTM</text><path d="M385 61h27l33 43-33 44h-27"/><circle cx="445" cy="104" r="5"/><text class="svg-small" x="23" y="187">BASELINE / NEURAL MODEL COMPARISON</text></svg></div><p class="diagram-key">PROJECT CONCEPT / MACHINE LEARNING / NLP</p>
+ <dl class="project-facts"><div><dt>Contribution</dt><dd>Model development &amp; evaluation</dd></div><div><dt>Context</dt><dd>Machine Learning Foundations</dd></div><div><dt>Period</dt><dd>2025</dd></div></dl></div>
+ <div class="detail-layout"><article class="prose"><h2>The idea</h2><p>I built two models to classify Amazon book reviews as positive or negative, using the same dataset to compare a simpler text-classification baseline with a neural approach.</p><h2>The approach</h2><p>The baseline represents text with TF–IDF and classifies it with logistic regression. The neural model tokenizes and pads sequences, then applies an embedding layer, a bidirectional LSTM, and a sigmoid output.</p><h2>My contribution</h2><ul><li>Implemented and evaluated both approaches on book-review text.</li><li>Compared test accuracy instead of assuming the neural model would perform better.</li><li>Identified pretrained embeddings and regularization as potential areas for further experimentation.</li></ul><h2>What I learned</h2><p>The baseline reached 80% test accuracy, while the initial LSTM with random embeddings reached 74.5%. The simpler model performed better in this experiment.</p><table class="data-table"><caption>Test accuracy reported in the project repository</caption><thead><tr><th scope="col">Model</th><th scope="col">Accuracy</th></tr></thead><tbody><tr><th scope="row">TF–IDF + logistic regression</th><td>80%</td></tr><tr><th scope="row">BiLSTM, random embeddings</th><td>74.5%</td></tr></tbody></table></article><aside class="detail-aside" aria-label="Project links and technologies"><h2>Inside the project</h2><div class="tags"><span class="tag">Python</span><span class="tag">TF–IDF</span><span class="tag">Logistic regression</span><span class="tag">BiLSTM</span></div><a class="button" href="https://github.com/Honojerame/eCornell_Final_Project" target="_blank" rel="noopener noreferrer">View on GitHub<span class="arrow" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a><a class="text-link" href="index.html#contact">Let's talk about it <span class="arrow" aria-hidden="true">↗</span></a><p>These are the test results reported in the project repository; proposed improvements have not been presented as achieved results.</p></aside></div>
+ <div class="related-project"><a href="project-pacmen.html"><div><span class="overline">Next project</span><h2>PacMen</h2></div><span class="arrow" aria-hidden="true">↗</span></a></div>
+</div></main><footer class="site-footer"><div class="container footer-inner">
+  <span>© <span data-year>2026</span> Precious Onojerame</span>
+  <div class="footer-secondary"><a href="https://twitter.com/Honojerame" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a><a href="https://www.facebook.com/profile.php?id=100074418820867" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href="#main">Back to top ↑</a></div>
+</div></footer>
 </body>
-
 </html>
