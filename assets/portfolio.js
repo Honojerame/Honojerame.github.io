@@ -35,6 +35,22 @@
   const year = document.querySelector('[data-year]');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  // Play one brief current sweep as each card enters view, including on touch
+  // screens. CSS also replays it on hover or keyboard focus without intercepting links.
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if ('IntersectionObserver' in window && !reducedMotion.matches) {
+    const cardObserver = new window.IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        cardObserver.unobserve(entry.target);
+        if (reducedMotion.matches) return;
+        entry.target.classList.add('is-energized');
+        window.setTimeout(() => entry.target.classList.remove('is-energized'), 3100);
+      });
+    }, { threshold: 0.25 });
+    document.querySelectorAll('.project-card').forEach((card) => cardObserver.observe(card));
+  }
+
   // Keep the existing Formspree endpoint and its native no-JavaScript POST.
   // A message is shown as sent only after an affirmative server response.
   const form = document.querySelector('#contact-form');
