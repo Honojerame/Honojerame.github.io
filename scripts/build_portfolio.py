@@ -8,6 +8,7 @@ ORIGIN = 'https://honojerame.github.io'
 GITHUB = 'https://github.com/Honojerame'
 LINKEDIN = 'https://www.linkedin.com/in/precious-onojerame-880498183/'
 RESUME = "PRESH'S%20RESUME.pdf"
+ASSET_VERSION = 'chip-current-1'
 ARROW = '<span class="arrow" aria-hidden="true">↗</span>'
 
 
@@ -33,11 +34,11 @@ def head(title, description, route):
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{escape(title, quote=True)}">
   <meta name="twitter:description" content="{escape(description, quote=True)}">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.png" sizes="any">
+  <link rel="icon" href="assets/favicon.svg?v={ASSET_VERSION}" type="image/svg+xml">
   <link rel="preload" href="fonts/poppins-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/portfolio.css">
-  <script src="assets/portfolio.js" defer></script>
+  <link rel="stylesheet" href="assets/portfolio.css?v={ASSET_VERSION}">
+  <script src="assets/portfolio.js?v={ASSET_VERSION}" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>'''
@@ -49,7 +50,7 @@ def header(home=False):
     current = '' if home else ' aria-current="true"'
     return f'''<header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="Precious Onojerame, home"><span class="monogram" aria-hidden="true">PO</span><span class="brand-name">Precious Onojerame<span class="brand-period accent">.</span></span></a>
+    <a class="brand" href="index.html" aria-label="Precious Onojerame, home"><span class="monogram" aria-hidden="true"><svg class="chip-mark" viewBox="0 0 48 48" focusable="false"><path class="chip-pins" d="M15 3v6m6-6v6m6-6v6m6-6v6M15 39v6m6-6v6m6-6v6m6-6v6M3 15h6m-6 6h6m-6 6h6m-6 6h6M39 15h6m-6 6h6m-6 6h6m-6 6h6"/><rect class="chip-body" x="9" y="9" width="30" height="30" rx="2"/><rect class="chip-die" x="12" y="12" width="24" height="24" rx="1"/><circle class="chip-notch" cx="13.5" cy="13.5" r="1.2"/></svg><span class="chip-initials">PO</span></span><span class="brand-name">Precious Onojerame<span class="brand-period accent">.</span></span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" hidden>Menu +</button>
     <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
       <a href="{work}"{current}>Work</a><a href="{prefix}#about">About</a><a href="{prefix}#experience">Experience</a><a href="{prefix}#contact">Contact</a>
@@ -121,7 +122,17 @@ def visual(kind, uid, accessible=False):
     }
     attrs = f'role="img" aria-labelledby="{uid}-title"' if accessible else 'aria-hidden="true"'
     title = f'<title id="{uid}-title">{descriptions[kind]}</title>' if accessible else ''
-    return f'<div class="project-visual"><svg class="project-svg" viewBox="0 0 500 210" {attrs}>{title}{drawings[kind]}</svg></div>'
+    # Short highlights follow the existing connections without crossing labels.
+    signal_paths = {
+      'amhs': 'M88 78H197 M315 78H430 M256 103v55',
+      'prisca': 'M155 75h27l25 25h20 M155 139h27l25-25h20 M334 106h35l24-24h50',
+      'solar': 'M149 100h40 M313 100h40',
+      'bus': 'M251 100v23H87v22 M251 123v22 M251 123h164v22',
+      'sentiment': 'M140 104h34l33-44h33 M174 104l33 44h33 M385 61h27l33 43-33 44h-27',
+      'web': 'M75 74h350',
+    }
+    signal = '' if accessible else f'<path class="card-signal" d="{signal_paths[kind]}" pathLength="100"/>'
+    return f'<div class="project-visual"><svg class="project-svg" viewBox="0 0 500 210" {attrs}>{title}{drawings[kind]}{signal}</svg></div>'
 
 
 PROJECTS = [
@@ -139,6 +150,7 @@ PROJECTS = [
 
 def card(p, i):
     return f'''<a class="project-card" href="project-{p['slug']}.html">
+ <svg class="card-current" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="card-current-trace" x=".5" y=".5" width="99" height="99" rx="1.3" pathLength="100" vector-effect="non-scaling-stroke"/></svg>
  {visual(p['kind'], 'card-'+str(i))}<div class="project-copy">
  <div class="overline">{escape(p['category'])}</div><div class="project-title"><h3>{escape(p['title'])}</h3>{ARROW}</div>
  <p>{escape(p['description'])}</p>{tags(p['stack'][:4])}</div></a>'''
