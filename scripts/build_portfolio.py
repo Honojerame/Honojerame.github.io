@@ -2,17 +2,20 @@
 """Generate dependency-free GitHub Pages HTML. Run: python3 scripts/build_portfolio.py."""
 from html import escape
 from pathlib import Path
+from engineering_projects import ENGINEERING, engineering_visual
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = 'https://honojerame.github.io'
 GITHUB = 'https://github.com/Honojerame'
 LINKEDIN = 'https://www.linkedin.com/in/precious-onojerame-880498183/'
 RESUME = "PRESH'S%20RESUME.pdf"
-ASSET_VERSION = 'chip-current-1'
+ASSET_VERSION = 'rtl-portfolio-1'
 ARROW = '<span class="arrow" aria-hidden="true">↗</span>'
 
 
 def external(url, label, css='text-link'):
+    if url.startswith('https://github.com/') and url.endswith('.md'):
+        url = url.replace('/tree/', '/blob/')
     return f'<a class="{css}" href="{escape(url, quote=True)}" target="_blank" rel="noopener noreferrer">{label}{ARROW}<span class="visually-hidden"> (opens in a new tab)</span></a>'
 
 
@@ -104,6 +107,8 @@ def circuit():
 
 
 def visual(kind, uid, accessible=False):
+    if kind in ('cpu','systolic','memory','noc'):
+        return engineering_visual(kind, uid, accessible)
     drawings = {
       'amhs': '''<text class="svg-small" x="22" y="25">CONTROL ARCHITECTURE</text><path d="M88 74H430M88 82H430 M126 82v29 M384 82v29"/><rect x="93" y="110" width="67" height="44" rx="3"/><text x="126" y="137" text-anchor="middle">FOUP</text><rect x="351" y="110" width="67" height="44" rx="3"/><text x="384" y="137" text-anchor="middle">FOUP</text><rect x="197" y="51" width="118" height="52" rx="4"/><text class="svg-title" x="256" y="75" text-anchor="middle">OHT</text><text class="svg-small" x="256" y="91" text-anchor="middle">SERVO + HOIST</text><path d="M256 103v55 M162 132h35 M315 132h34 M197 132v26h118v-26"/><text class="svg-accent" x="256" y="182" text-anchor="middle">FSM · INTERLOCKS · TELEMETRY</text><circle cx="88" cy="78" r="4"/><circle cx="430" cy="78" r="4"/>''',
       'prisca': '''<text class="svg-small" x="22" y="25">FORECASTING PIPELINE</text><rect x="28" y="54" width="127" height="42" rx="3"/><text x="91" y="79" text-anchor="middle">PRICE HISTORY</text><rect x="28" y="118" width="127" height="42" rx="3"/><text x="91" y="143" text-anchor="middle">NEWS SENTIMENT</text><path d="M155 75h27l25 25h20 M155 139h27l25-25h20"/><rect x="227" y="80" width="107" height="53" rx="4"/><text class="svg-title" x="280" y="112" text-anchor="middle">XGBoost</text><path d="M334 106h35l24-24h50 M393 82l-6-1m6 1l-1 6"/><text class="svg-accent" x="407" y="116" text-anchor="middle">NEXT OPEN</text><text class="svg-small" x="22" y="186">PRISCA / MACHINE LEARNING + NLP</text>''',
@@ -135,7 +140,7 @@ def visual(kind, uid, accessible=False):
     return f'<div class="project-visual"><svg class="project-svg" viewBox="0 0 500 210" {attrs}>{title}{drawings[kind]}{signal}</svg></div>'
 
 
-PROJECTS = [
+LEGACY_PROJECTS = [
  dict(slug='amhs', title='AMHS FOUP Digital Twin', category='Embedded controls / simulation', kind='amhs', repo=GITHUB+'/amhs-foup-digital-twin', year='2026', role='Independent project', context='Semiconductor manufacturing', stack=['Python','Embedded controls','JavaScript','HMI','CI/CD'], description='A semiconductor-fab digital twin connecting transport scheduling, servo motion, safety interlocks, and a live browser control room.', overview='How do software decisions become safe, coordinated physical motion? I built a digital twin of an automated material handling system (AMHS) to explore that question through the movement of 300 mm wafer carriers, known as FOUPs, inside a simulated semiconductor fab.', approach='A deterministic state machine coordinates overhead hoist transport (OHT), from pickup to delivery. The model connects dispatch logic to acceleration-limited servo motion, position feedback, timed hoist transfers, and emergency-stop recovery.', contributions=['Modeled multi-vehicle transport, FIFO dispatch, and pickup/drop-off sequencing in typed Python.','Connected a proportional position-to-velocity controller with acceleration limits and target-crossing detection.','Built a browser control room with vehicle animation, telemetry, time controls, pause/reset, and fault injection.','Added automated tests, GitHub Actions CI, and system architecture documentation.'], takeaway='The project makes control boundaries visible: scheduling requests, controller states, plant motion, sensor feedback, and the operator interface can be inspected together.', note='This is an independent simulation. Collision avoidance, rail-segment reservations, and a hardware firmware implementation remain roadmap items.'),
  dict(slug='prisca-spy-predictor',title='PRISCA SPY Predictor',category='Machine learning / NLP',kind='prisca',repo=GITHUB+'/prisca-spy-predictor',year='2025',role='ML development & team leadership',context='Break Through Tech AI Studio',stack=['Python','XGBoost','FinBERT','FastAPI','SHAP'],description='A collaborative forecasting pipeline combining historical market data and financial-news sentiment to predict the next SPY opening price.',overview='PRISCA explores whether financial-news sentiment adds useful information to a next-day SPY opening-price forecast. Developed with a six-person AI Studio team, the project combines a price-data pipeline, NLP features, regression models, and a web interface.',approach='Historical price features and news sentiment from VADER and FinBERT feed tree-based regression models. Model comparison and SHAP analysis help the team understand which inputs contribute to the forecast.',contributions=['Contributed machine learning development, model training, and optimization.','Helped coordinate the team as my role evolved from project management to technical leadership.','Worked on feature preparation and evaluation alongside teammates responsible for sentiment analysis, data processing, and the application.'],takeaway='The project reinforced the value of strong baselines and interpretable evaluation. Prior-price features were more influential than sentiment in the documented experiments.',note='A collaborative educational forecasting project. Reported historical model metrics are not evidence of live trading performance.'),
  dict(slug='solar',title='Solar Power Forecasting',category='Applied AI / research',kind='solar',repo=GITHUB+'/AI-Solar_Power_Prediciton',year='Undergraduate research',role='Research & model development',context='Eastern New Mexico University',stack=['Python','LightGBM','scikit-learn','pandas'],description='Machine learning research that turns historical weather and energy data into solar-generation forecasts.',overview='Solar generation changes with weather conditions. This undergraduate research project investigates how historical energy and meteorological features can support useful power-output forecasts.',approach='I worked through the complete modeling pipeline: cleaning and preparing data, exploring relationships, engineering features, comparing regression models, and tuning hyperparameters.',contributions=['Compared LightGBM, ExtraTrees, and Ridge regression models.','Evaluated predictions using MAE, RMSE, and R².','Examined how weather variables, including solar radiation and temperature, relate to generation.','Presented the research at a student research conference.'],takeaway='The work connects machine learning with an energy-system problem, emphasizing evaluation and interpretation alongside predictive performance.',note='Research results depend on the dataset and evaluation setup. The repository contains the analysis and modeling workflow.'),
@@ -148,23 +153,56 @@ PROJECTS = [
 ]
 
 
+PROJECTS = ENGINEERING + [p for p in LEGACY_PROJECTS if p['slug'] in ('amhs','prisca-spy-predictor','solar')]
+
 def card(p, i):
     return f'''<a class="project-card" href="project-{p['slug']}.html">
  <svg class="card-current" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="card-current-trace" x=".5" y=".5" width="99" height="99" rx="1.3" pathLength="100" vector-effect="non-scaling-stroke"/></svg>
  {visual(p['kind'], 'card-'+str(i))}<div class="project-copy">
  <div class="overline">{escape(p['category'])}</div><div class="project-title"><h3>{escape(p['title'])}</h3>{ARROW}</div>
- <p>{escape(p['description'])}</p>{tags(p['stack'][:4])}</div></a>'''
+ <p>{escape(p['description'])}</p>{tags(p['stack'][:4])}{engineering_card_metric(p)}</div></a>'''
+
+
+def engineering_card_metric(p):
+    if not p.get('engineering'):
+        return ''
+    return f'<p class="card-evidence"><span class="evidence-dot" aria-hidden="true"></span><strong>{p["metric"]}</strong> {escape(p["metric_label"])}</p>'
+
+
+def engineering_band():
+    return '''<div class="engineering-band"><div><span class="overline">SOURCE. SPECIFICATION. EVIDENCE.</span><h3>Open the engineering notebook.</h3><p>Architecture guides, interface contracts, verification matrices, measured results, and design-review walkthroughs.</p></div><div class="engineering-band-links"><a class="button button-quiet" href="engineering.html">Read the documentation ↗</a><a class="text-link" href="downloads/circuit-works.zip" download>Download complete source ↓</a></div></div>'''
+
+
+def engineering_evidence(p):
+    rows=''.join(f'<tr><th scope="row">{escape(label)}</th><td>{escape(value)}</td></tr>' for label,value in p['evidence'])
+    return f'''<h2>Verification evidence</h2><table class="data-table"><caption>Results from actual RTL simulation and generic synthesis</caption><tbody>{rows}</tbody></table><p>Each project includes a documented test plan and coverage gaps. Simulation checks the supplied workloads; generic cell counts are not physical area, timing, or power measurements.</p><h2>Reproduce the result</h2><p>Download the source, install the open-source tools, and run from the collection root:</p><pre class="code-sample"><code>{escape(p['command'])}
+make lint
+make synth
+make report</code></pre><p><a class="text-link" href="engineering.html">Explore the complete documentation {ARROW}</a></p>'''
+
+
+def engineering_page():
+    content=head('Engineering Notebook | Precious Onojerame','Four RTL architecture studies: source, architecture specifications, verification plans, and reproducible measured results.','engineering.html')+header()
+    content+='''<main id="main"><section class="page-intro"><div class="container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="projects.html">Work</a><span>/</span><span aria-current="page">Engineering notebook</span></nav><p class="eyebrow">CIRCUIT WORKS / ENGINEERING NOTEBOOK</p><h1>Read the design.<br><span class="accent">Run the evidence.</span></h1><p class="intro-text">Four original RTL studies, from processor pipelines to the fabric that moves their data. Specifications, testbenches, reference models, and measured results are published together.</p><div class="actions"><a class="button" href="downloads/circuit-works.zip" download>Download source bundle ↓</a><a class="button button-quiet" href="https://github.com/Honojerame/Honojerame.github.io/tree/main/engineering">Browse on GitHub ↗</a></div></div></section><div class="container"><section class="notebook-stats" aria-label="Verification summary"><div><strong>4</strong><span>Architecture studies</span></div><div><strong>1,076</strong><span>Simulation cases & operations</span></div><div><strong>5</strong><span>Top levels linted & synthesized</span></div></section><section class="project-collection" aria-labelledby="guides-title"><div class="section-heading"><div><span class="section-index">THE DESIGN LIBRARY</span><h2 id="guides-title">A guide for every boundary.</h2></div></div><div class="notebook-grid">'''
+    for i,p in enumerate(ENGINEERING,1):
+        content+=f'''<article class="notebook-card"><span class="overline">0{i} / {escape(p['category'])}</span><h3><a href="project-{p['slug']}.html">{escape(p['title'])}</a></h3><p>{escape(p['description'])}</p><ul class="notebook-links"><li>{external(p['repo']+'/README.md','Project guide')}</li><li>{external(p['repo']+'/docs/architecture.md','Architecture & interfaces')}</li><li>{external(p['repo']+'/docs/verification.md','Verification & coverage')}</li><li>{external(p['repo']+'/rtl','RTL source')}</li><li>{external(p['repo']+'/tb','Testbenches')}</li></ul><code class="notebook-command">{p['command']}</code></article>'''
+    base='https://github.com/Honojerame/Honojerame.github.io/tree/main/engineering'
+    content+='</div></section><section class="notebook-resources"><div><span class="section-index">REPRODUCIBLE BY DESIGN</span><h2>Follow every claim to its evidence.</h2><p>The tests compare architectural behavior and complete transactions. The documentation separates implemented features, measured behavior, design reasoning, and future work.</p><p>Independent educational implementations developed with AI assistance. No production GPU, fabricated silicon, physical timing, or compliance certification is claimed.</p></div><ul class="notebook-links">'
+    for path,label in [('docs/getting-started.md','Tool setup & waveform debugging'),('docs/results.md','Measured results'),('docs/verification-methodology.md','Verification methodology'),('docs/design-review.md','Architecture review walkthrough'),('results','Machine-readable results & synthesis logs')]:
+        content+='<li>'+external(base+'/'+path,label)+'</li>'
+    content+='</ul></section></div></main>'
+    return content+footer()
 
 
 def home():
-    content = head('Precious Onojerame | Hardware, Software & Intelligent Systems', 'Aspiring computer engineer and Module Equipment Technician at Intel. Explore projects in embedded controls, digital twins, software, and machine learning.', '') + header(True)
+    content = head('Precious Onojerame | Computer Architecture, RTL & AI Systems', 'Aspiring computer engineer and Module Equipment Technician at Intel. Explore verified RTL projects in CPU design, AI acceleration, GPU memory, and on-chip networks.', '') + header(True)
     content += f'''<main id="main">
 <span id="page1" class="anchor-alias"></span>
 <div class="container">
  <section class="hero" aria-labelledby="hero-title">
   <div class="hero-copy"><p class="eyebrow">HELLO, I'M PRECIOUS ONOJERAME</p>
    <h1 id="hero-title">Where hardware<br>meets<br><span class="accent">intelligence.</span></h1>
-   <p class="hero-description"><strong>Aspiring computer engineer.</strong> Building across embedded systems, software, and machine learning, with hands-on semiconductor experience at Intel.</p>
+   <p class="hero-description"><strong>Aspiring computer engineer.</strong> Exploring processor pipelines, AI accelerator dataflow, and GPU-style memory systems, with hands-on semiconductor experience at Intel.</p>
    <div class="actions"><a class="button" href="#work">Explore my work <span class="arrow" aria-hidden="true">↓</span></a><a class="button button-quiet" href="#contact">Let's connect {ARROW}</a></div>
    <p class="hero-footnote">Albuquerque, New Mexico / Curious by design.</p>
   </div>{circuit()}
@@ -172,11 +210,11 @@ def home():
  <div class="hero-facts" aria-label="At a glance">
   <div class="fact"><span class="overline">Currently / Intel</span><p>Module Equipment Technician</p></div>
   <div class="fact"><span class="overline">Studying / ENMU</span><p>Computer Science + Electronics Engineering Technology</p></div>
-  <div class="fact"><span class="overline">Building toward</span><p>Intelligent physical systems</p></div>
+  <div class="fact"><span class="overline">Building toward</span><p>CPUs, GPUs & AI accelerators</p></div>
  </div>
  <section class="section" id="work" aria-labelledby="work-title"><span id="page5" class="anchor-alias"></span>
-  <div class="section-heading"><div><span class="section-index">01 / SELECTED WORK</span><h2 id="work-title">Ideas, made tangible.</h2></div><a class="text-link" href="projects.html">All projects {ARROW}</a></div>
-  <div class="project-grid">{''.join(card(p, i) for i,p in enumerate(PROJECTS[:4]))}</div>
+  <div class="section-heading"><div><span class="section-index">01 / SELECTED WORK</span><h2 id="work-title">Architecture, in working RTL.</h2></div><a class="text-link" href="projects.html">All projects {ARROW}</a></div>
+  <p class="work-intro">Four architecture studies, with executable SystemVerilog, independent verification, and measured results. Follow the design from interface contract to passing testbench.</p><div class="project-grid">{''.join(card(p, i) for i,p in enumerate(PROJECTS[:4]))}</div>{engineering_band()}
  </section>
 </div>
 <section class="section section-surface" id="about" aria-labelledby="about-title"><span id="page4" class="anchor-alias"></span><span id="page2" class="anchor-alias"></span>
@@ -186,7 +224,7 @@ def home():
   <p>My goal is to become a computer engineer, building a deeper foundation in embedded systems, computer architecture, and the hardware behind intelligent machines.</p>
   <div class="actions"><a class="text-link" href="{RESUME}" download>Download résumé <span class="arrow" aria-hidden="true">↓</span></a>{external('https://www.youtube.com/watch?v=8y2SUVlU3Co','Introduction video')}</div>
  </div><div class="focus-list" aria-label="Technical focus">
-  <article class="focus-item"><svg class="focus-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="8" y="8" width="20" height="20" rx="2"/><rect x="13" y="13" width="10" height="10"/><path d="M13 3v5m10-5v5M13 28v5m10-5v5M3 13h5m-5 10h5m20-10h5m-5 10h5"/></svg><div><h3>Hardware & embedded systems</h3><p>Digital logic, microcontrollers, sensors, actuators, and control systems. Hands-on FPGA work using the Artix-7 Basys3 and Vivado.</p><p class="stack">C / C++ / Arduino / HDL / Vivado</p></div></article>
+  <article class="focus-item"><svg class="focus-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="8" y="8" width="20" height="20" rx="2"/><rect x="13" y="13" width="10" height="10"/><path d="M13 3v5m10-5v5M13 28v5m10-5v5M3 13h5m-5 10h5m20-10h5m-5 10h5"/></svg><div><h3>Hardware & embedded systems</h3><p>Processor pipelines, accelerator dataflow, memory systems, and on-chip communication. Hands-on FPGA foundations with the Artix-7 Basys3 and Vivado.</p><p class="stack">SystemVerilog / RISC-V / Icarus / Yosys / Vivado</p></div></article>
   <article class="focus-item"><svg class="focus-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="m11 10-8 8 8 8m14-16 8 8-8 8M21 5l-6 26"/></svg><div><h3>Software & systems</h3><p>Applications, simulation, and interfaces that make complex processes easier to run and understand.</p><p class="stack">Python / Java / JavaScript / React / Git</p></div></article>
   <article class="focus-item"><svg class="focus-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="7" cy="9" r="3"/><circle cx="7" cy="27" r="3"/><circle cx="19" cy="18" r="4"/><circle cx="30" cy="7" r="3"/><circle cx="30" cy="28" r="3"/><path d="m10 11 6 5m-6 9 6-5m6-5 6-6m-6 12 6 5"/></svg><div><h3>Machine learning & research</h3><p>Predictive modeling for energy and environmental systems, including solar generation and global-LSTM water-level forecasting research.</p><p class="stack">scikit-learn / TensorFlow / LightGBM / NLP</p></div></article>
  </div></div>
@@ -235,10 +273,10 @@ def home():
 
 def projects_page():
     content = head('Projects | Precious Onojerame', 'Explore digital twins, embedded controls, machine learning research, and software projects by Precious Onojerame.', 'projects.html') + header()
-    content += '''<main id="main"><section class="page-intro"><div class="container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Work</span></nav><p class="eyebrow">PROJECTS / EXPLORATIONS / RESEARCH</p><h1>From code to<br><span class="accent">real-world systems.</span></h1><p class="intro-text">A selection of work across embedded controls, applied machine learning, and software development.</p></div></section><div class="container"><section class="project-collection" aria-labelledby="featured-title"><div class="collection-heading"><h2 id="featured-title">Featured projects</h2><span class="overline">Hardware / Software / AI</span></div><div class="project-grid">'''
-    content += ''.join(card(p, i) for i,p in enumerate(PROJECTS[:5]))
-    content += '</div></section><section class="project-collection" aria-labelledby="archive-title"><div class="collection-heading"><h2 id="archive-title">Early explorations</h2><p>Where the foundations took shape.</p></div><div class="archive-list">'
-    for i,p in enumerate(PROJECTS[5:],6):
+    content += '''<main id="main"><section class="page-intro"><div class="container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Work</span></nav><p class="eyebrow">RTL / ARCHITECTURE / VERIFICATION</p><h1>Inside the<br><span class="accent">compute fabric.</span></h1><p class="intro-text">Computer architecture studies with RTL you can inspect, tests you can run, and results you can reproduce.</p></div></section><div class="container"><section class="project-collection" aria-labelledby="featured-title"><div class="collection-heading"><h2 id="featured-title">RTL architecture projects</h2><span class="overline">Compute / Memory / Interconnect</span></div><div class="project-grid">'''
+    content += ''.join(card(p, i) for i,p in enumerate(PROJECTS[:4]))
+    content += '</div>' + engineering_band() + '</section><section class="project-collection" aria-labelledby="archive-title"><div class="collection-heading"><h2 id="archive-title">Applied systems & research</h2><p>Semiconductor controls, forecasting, and energy research.</p></div><div class="archive-list">'
+    for i,p in enumerate(PROJECTS[4:],5):
         content += f'<a class="archive-link" href="project-{p["slug"]}.html"><span class="archive-number">{i:02}</span><h3>{p["title"]}</h3><p>{escape(p["description"])}</p>{ARROW}</a>'
     content += '</div></section></div></main>'
     return content + footer()
@@ -251,9 +289,16 @@ def detail(p, next_project):
 <div class="container"><div class="detail-hero">{visual(p['kind'],'detail-'+p['slug'],True)}<p class="diagram-key">PROJECT CONCEPT / {escape(p['category'].upper())}</p>
  <dl class="project-facts"><div><dt>Contribution</dt><dd>{escape(p['role'])}</dd></div><div><dt>Context</dt><dd>{escape(p['context'])}</dd></div><div><dt>Period</dt><dd>{escape(p['year'])}</dd></div></dl></div>
  <div class="detail-layout"><article class="prose"><h2>The idea</h2><p>{escape(p['overview'])}</p><h2>The approach</h2><p>{escape(p['approach'])}</p><h2>My contribution</h2><ul>{''.join('<li>'+escape(x)+'</li>' for x in p['contributions'])}</ul><h2>What I learned</h2><p>{escape(p['takeaway'])}</p>'''
+    if p.get('engineering'):
+        content = content.replace('<h2>My contribution</h2>','<h2>Engineering work</h2>').replace('<h2>What I learned</h2>','<h2>What the results show</h2>')
+        content += engineering_evidence(p)
     if p['slug']=='ecornell':
         content += '<table class="data-table"><caption>Test accuracy reported in the project repository</caption><thead><tr><th scope="col">Model</th><th scope="col">Accuracy</th></tr></thead><tbody><tr><th scope="row">TF–IDF + logistic regression</th><td>80%</td></tr><tr><th scope="row">BiLSTM, random embeddings</th><td>74.5%</td></tr></tbody></table>'
     content += f'''</article><aside class="detail-aside" aria-label="Project links and technologies"><h2>Inside the project</h2>{tags(p['stack'])}{external(p['repo'],'View on GitHub','button')}'''
+    if p.get('engineering'):
+        content += external(p['repo']+'/docs/architecture.md','Architecture guide','button button-quiet')
+        content += external(p['repo']+'/docs/verification.md','Verification plan','button button-quiet')
+        content += '<a class="button button-quiet" href="downloads/circuit-works.zip" download>Download all source ↓</a>'
     if p.get('demo'):
         content += external(p['demo'],'Open original demo','button button-quiet')
     content += f'''<a class="text-link" href="index.html#contact">Let's talk about it {ARROW}</a><p>{escape(p['note'])}</p></aside></div>
@@ -265,6 +310,7 @@ def detail(p, next_project):
 def build():
     (ROOT/'index.html').write_text(home(),encoding='utf-8')
     (ROOT/'projects.html').write_text(projects_page(),encoding='utf-8')
+    (ROOT/'engineering.html').write_text(engineering_page(),encoding='utf-8')
     for i,p in enumerate(PROJECTS):
         (ROOT/f'project-{p["slug"]}.html').write_text(detail(p,PROJECTS[(i+1)%len(PROJECTS)]),encoding='utf-8')
     print(f'Generated homepage, project index, and {len(PROJECTS)} project pages.')

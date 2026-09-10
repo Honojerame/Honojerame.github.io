@@ -1,0 +1,85 @@
+{
+  "mode": "synth",
+  "tops": [
+    {
+      "top": "rv32_cluster",
+      "generic_cells": 35644,
+      "wire_bits": 46197,
+      "cell_types": {
+        "$_AND_": 6907,
+        "$_MUX_": 14421,
+        "$_NOT_": 780,
+        "$_OR_": 3939,
+        "$_SDFFCE_PN0P_": 3964,
+        "$_SDFFCE_PN1P_": 4,
+        "$_SDFFE_PP0N_": 1232,
+        "$_SDFFE_PP0P_": 1485,
+        "$_SDFF_PN0_": 128,
+        "$_SDFF_PP0_": 44,
+        "$_XOR_": 2740
+      }
+    },
+    {
+      "top": "systolic_tile",
+      "generic_cells": 24847,
+      "wire_bits": 38817,
+      "cell_types": {
+        "$_AND_": 10160,
+        "$_DFFE_PP_": 1024,
+        "$_DFF_P_": 3,
+        "$_MUX_": 2696,
+        "$_NOT_": 455,
+        "$_OR_": 3569,
+        "$_SDFFE_PP0P_": 960,
+        "$_SDFF_PP0_": 72,
+        "$_XOR_": 5908
+      }
+    },
+    {
+      "top": "warp_coalescer",
+      "generic_cells": 20400,
+      "wire_bits": 65309,
+      "cell_types": {
+        "$_AND_": 1164,
+        "$_DFF_P_": 3,
+        "$_MUX_": 13559,
+        "$_NOT_": 250,
+        "$_OR_": 1442,
+        "$_SDFFE_PP0P_": 1217,
+        "$_SDFF_PP0_": 1152,
+        "$_XOR_": 1613
+      }
+    },
+    {
+      "top": "banked_scratchpad",
+      "generic_cells": 89994,
+      "wire_bits": 236702,
+      "cell_types": {
+        "$_AND_": 9854,
+        "$_DFFE_PP_": 8192,
+        "$_DFF_P_": 3,
+        "$_MUX_": 39528,
+        "$_NOT_": 3279,
+        "$_OR_": 17777,
+        "$_SDFFE_PP0P_": 2114,
+        "$_SDFF_PP0_": 1024,
+        "$_XOR_": 8223
+      }
+    },
+    {
+      "top": "mesh_noc",
+      "generic_cells": 78240,
+      "wire_bits": 201364,
+      "cell_types": {
+        "$_AND_": 18780,
+        "$_DFFE_PP_": 5120,
+        "$_MUX_": 30760,
+        "$_NOT_": 5460,
+        "$_OR_": 8960,
+        "$_SDFFE_PP0P_": 1440,
+        "$_SDFF_PP0_": 40,
+        "$_XOR_": 7680
+      }
+    }
+  ]
+}

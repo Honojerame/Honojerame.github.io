@@ -1,0 +1,870 @@
+{
+  "tests": 32,
+  "retirements_compared": 25668,
+  "cases": [
+    {
+      "cores": 1,
+      "seed": 0,
+      "terminal_cause": 11,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 430,
+          "retired": 323,
+          "memory_stalls": 0,
+          "load_stalls": 42,
+          "redirects": 30
+        }
+      ]
+    },
+    {
+      "cores": 1,
+      "seed": 1,
+      "terminal_cause": 4,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 655,
+          "retired": 318,
+          "memory_stalls": 227,
+          "load_stalls": 27,
+          "redirects": 39
+        }
+      ]
+    },
+    {
+      "cores": 1,
+      "seed": 2,
+      "terminal_cause": 6,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 932,
+          "retired": 315,
+          "memory_stalls": 511,
+          "load_stalls": 33,
+          "redirects": 34
+        }
+      ]
+    },
+    {
+      "cores": 1,
+      "seed": 3,
+      "terminal_cause": 2,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 682,
+          "retired": 317,
+          "memory_stalls": 263,
+          "load_stalls": 39,
+          "redirects": 29
+        }
+      ]
+    },
+    {
+      "cores": 1,
+      "seed": 4,
+      "terminal_cause": 0,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 928,
+          "retired": 331,
+          "memory_stalls": 501,
+          "load_stalls": 43,
+          "redirects": 24
+        }
+      ]
+    },
+    {
+      "cores": 1,
+      "seed": 5,
+      "terminal_cause": 3,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 663,
+          "retired": 327,
+          "memory_stalls": 243,
+          "load_stalls": 38,
+          "redirects": 25
+        }
+      ]
+    },
+    {
+      "cores": 1,
+      "seed": 6,
+      "terminal_cause": 11,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 894,
+          "retired": 315,
+          "memory_stalls": 479,
+          "load_stalls": 29,
+          "redirects": 33
+        }
+      ]
+    },
+    {
+      "cores": 1,
+      "seed": 7,
+      "terminal_cause": 4,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 709,
+          "retired": 322,
+          "memory_stalls": 294,
+          "load_stalls": 38,
+          "redirects": 25
+        }
+      ]
+    },
+    {
+      "cores": 1,
+      "seed": 8,
+      "terminal_cause": 6,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 1030,
+          "retired": 310,
+          "memory_stalls": 621,
+          "load_stalls": 30,
+          "redirects": 32
+        }
+      ]
+    },
+    {
+      "cores": 1,
+      "seed": 9,
+      "terminal_cause": 2,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 728,
+          "retired": 313,
+          "memory_stalls": 326,
+          "load_stalls": 34,
+          "redirects": 25
+        }
+      ]
+    },
+    {
+      "cores": 1,
+      "seed": 10,
+      "terminal_cause": 0,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 932,
+          "retired": 323,
+          "memory_stalls": 499,
+          "load_stalls": 39,
+          "redirects": 33
+        }
+      ]
+    },
+    {
+      "cores": 1,
+      "seed": 11,
+      "terminal_cause": 3,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 675,
+          "retired": 324,
+          "memory_stalls": 251,
+          "load_stalls": 41,
+          "redirects": 27
+        }
+      ]
+    },
+    {
+      "cores": 1,
+      "seed": 12,
+      "terminal_cause": 11,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 935,
+          "retired": 319,
+          "memory_stalls": 518,
+          "load_stalls": 35,
+          "redirects": 29
+        }
+      ]
+    },
+    {
+      "cores": 1,
+      "seed": 13,
+      "terminal_cause": 4,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 681,
+          "retired": 323,
+          "memory_stalls": 237,
+          "load_stalls": 44,
+          "redirects": 36
+        }
+      ]
+    },
+    {
+      "cores": 1,
+      "seed": 14,
+      "terminal_cause": 6,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 868,
+          "retired": 313,
+          "memory_stalls": 447,
+          "load_stalls": 35,
+          "redirects": 34
+        }
+      ]
+    },
+    {
+      "cores": 1,
+      "seed": 15,
+      "terminal_cause": 2,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 645,
+          "retired": 320,
+          "memory_stalls": 215,
+          "load_stalls": 33,
+          "redirects": 36
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 0,
+      "terminal_cause": 11,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 508,
+          "retired": 323,
+          "memory_stalls": 78,
+          "load_stalls": 42,
+          "redirects": 30
+        },
+        {
+          "core": 1,
+          "cycles": 509,
+          "retired": 324,
+          "memory_stalls": 80,
+          "load_stalls": 42,
+          "redirects": 29
+        },
+        {
+          "core": 2,
+          "cycles": 510,
+          "retired": 324,
+          "memory_stalls": 81,
+          "load_stalls": 42,
+          "redirects": 29
+        },
+        {
+          "core": 3,
+          "cycles": 511,
+          "retired": 324,
+          "memory_stalls": 82,
+          "load_stalls": 42,
+          "redirects": 29
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 1,
+      "terminal_cause": 4,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 1150,
+          "retired": 318,
+          "memory_stalls": 722,
+          "load_stalls": 27,
+          "redirects": 39
+        },
+        {
+          "core": 1,
+          "cycles": 1192,
+          "retired": 318,
+          "memory_stalls": 764,
+          "load_stalls": 27,
+          "redirects": 39
+        },
+        {
+          "core": 2,
+          "cycles": 1199,
+          "retired": 319,
+          "memory_stalls": 772,
+          "load_stalls": 27,
+          "redirects": 38
+        },
+        {
+          "core": 3,
+          "cycles": 1207,
+          "retired": 319,
+          "memory_stalls": 780,
+          "load_stalls": 27,
+          "redirects": 38
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 2,
+      "terminal_cause": 6,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 2665,
+          "retired": 315,
+          "memory_stalls": 2244,
+          "load_stalls": 33,
+          "redirects": 34
+        },
+        {
+          "core": 1,
+          "cycles": 2667,
+          "retired": 316,
+          "memory_stalls": 2247,
+          "load_stalls": 33,
+          "redirects": 33
+        },
+        {
+          "core": 2,
+          "cycles": 2670,
+          "retired": 315,
+          "memory_stalls": 2249,
+          "load_stalls": 33,
+          "redirects": 34
+        },
+        {
+          "core": 3,
+          "cycles": 2692,
+          "retired": 316,
+          "memory_stalls": 2272,
+          "load_stalls": 33,
+          "redirects": 33
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 3,
+      "terminal_cause": 2,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 1413,
+          "retired": 317,
+          "memory_stalls": 994,
+          "load_stalls": 39,
+          "redirects": 29
+        },
+        {
+          "core": 1,
+          "cycles": 1415,
+          "retired": 317,
+          "memory_stalls": 996,
+          "load_stalls": 39,
+          "redirects": 29
+        },
+        {
+          "core": 2,
+          "cycles": 1427,
+          "retired": 318,
+          "memory_stalls": 1009,
+          "load_stalls": 39,
+          "redirects": 28
+        },
+        {
+          "core": 3,
+          "cycles": 1428,
+          "retired": 317,
+          "memory_stalls": 1009,
+          "load_stalls": 39,
+          "redirects": 29
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 4,
+      "terminal_cause": 0,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 2540,
+          "retired": 331,
+          "memory_stalls": 2113,
+          "load_stalls": 43,
+          "redirects": 24
+        },
+        {
+          "core": 1,
+          "cycles": 2560,
+          "retired": 331,
+          "memory_stalls": 2133,
+          "load_stalls": 43,
+          "redirects": 24
+        },
+        {
+          "core": 2,
+          "cycles": 2568,
+          "retired": 331,
+          "memory_stalls": 2141,
+          "load_stalls": 43,
+          "redirects": 24
+        },
+        {
+          "core": 3,
+          "cycles": 2573,
+          "retired": 331,
+          "memory_stalls": 2146,
+          "load_stalls": 43,
+          "redirects": 24
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 5,
+      "terminal_cause": 3,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 1374,
+          "retired": 327,
+          "memory_stalls": 954,
+          "load_stalls": 38,
+          "redirects": 25
+        },
+        {
+          "core": 1,
+          "cycles": 1413,
+          "retired": 326,
+          "memory_stalls": 992,
+          "load_stalls": 38,
+          "redirects": 26
+        },
+        {
+          "core": 2,
+          "cycles": 1417,
+          "retired": 326,
+          "memory_stalls": 996,
+          "load_stalls": 38,
+          "redirects": 26
+        },
+        {
+          "core": 3,
+          "cycles": 1421,
+          "retired": 326,
+          "memory_stalls": 1000,
+          "load_stalls": 38,
+          "redirects": 26
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 6,
+      "terminal_cause": 11,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 2382,
+          "retired": 315,
+          "memory_stalls": 1967,
+          "load_stalls": 29,
+          "redirects": 33
+        },
+        {
+          "core": 1,
+          "cycles": 2393,
+          "retired": 317,
+          "memory_stalls": 1980,
+          "load_stalls": 29,
+          "redirects": 31
+        },
+        {
+          "core": 2,
+          "cycles": 2405,
+          "retired": 317,
+          "memory_stalls": 1992,
+          "load_stalls": 29,
+          "redirects": 31
+        },
+        {
+          "core": 3,
+          "cycles": 2417,
+          "retired": 317,
+          "memory_stalls": 2004,
+          "load_stalls": 29,
+          "redirects": 31
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 7,
+      "terminal_cause": 4,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 1421,
+          "retired": 322,
+          "memory_stalls": 1006,
+          "load_stalls": 38,
+          "redirects": 25
+        },
+        {
+          "core": 1,
+          "cycles": 1466,
+          "retired": 321,
+          "memory_stalls": 1050,
+          "load_stalls": 38,
+          "redirects": 26
+        },
+        {
+          "core": 2,
+          "cycles": 1486,
+          "retired": 321,
+          "memory_stalls": 1070,
+          "load_stalls": 38,
+          "redirects": 26
+        },
+        {
+          "core": 3,
+          "cycles": 1491,
+          "retired": 323,
+          "memory_stalls": 1077,
+          "load_stalls": 38,
+          "redirects": 24
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 8,
+      "terminal_cause": 6,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 2825,
+          "retired": 310,
+          "memory_stalls": 2416,
+          "load_stalls": 30,
+          "redirects": 32
+        },
+        {
+          "core": 1,
+          "cycles": 2834,
+          "retired": 310,
+          "memory_stalls": 2425,
+          "load_stalls": 30,
+          "redirects": 32
+        },
+        {
+          "core": 2,
+          "cycles": 2836,
+          "retired": 310,
+          "memory_stalls": 2427,
+          "load_stalls": 30,
+          "redirects": 32
+        },
+        {
+          "core": 3,
+          "cycles": 2858,
+          "retired": 310,
+          "memory_stalls": 2449,
+          "load_stalls": 30,
+          "redirects": 32
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 9,
+      "terminal_cause": 2,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 1489,
+          "retired": 313,
+          "memory_stalls": 1087,
+          "load_stalls": 34,
+          "redirects": 25
+        },
+        {
+          "core": 1,
+          "cycles": 1496,
+          "retired": 314,
+          "memory_stalls": 1095,
+          "load_stalls": 34,
+          "redirects": 24
+        },
+        {
+          "core": 2,
+          "cycles": 1505,
+          "retired": 314,
+          "memory_stalls": 1104,
+          "load_stalls": 34,
+          "redirects": 24
+        },
+        {
+          "core": 3,
+          "cycles": 1519,
+          "retired": 314,
+          "memory_stalls": 1118,
+          "load_stalls": 34,
+          "redirects": 24
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 10,
+      "terminal_cause": 0,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 2048,
+          "retired": 323,
+          "memory_stalls": 1615,
+          "load_stalls": 39,
+          "redirects": 33
+        },
+        {
+          "core": 1,
+          "cycles": 2052,
+          "retired": 324,
+          "memory_stalls": 1620,
+          "load_stalls": 39,
+          "redirects": 32
+        },
+        {
+          "core": 2,
+          "cycles": 2089,
+          "retired": 324,
+          "memory_stalls": 1657,
+          "load_stalls": 39,
+          "redirects": 32
+        },
+        {
+          "core": 3,
+          "cycles": 2106,
+          "retired": 324,
+          "memory_stalls": 1674,
+          "load_stalls": 39,
+          "redirects": 32
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 11,
+      "terminal_cause": 3,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 1452,
+          "retired": 324,
+          "memory_stalls": 1028,
+          "load_stalls": 41,
+          "redirects": 27
+        },
+        {
+          "core": 1,
+          "cycles": 1458,
+          "retired": 324,
+          "memory_stalls": 1034,
+          "load_stalls": 41,
+          "redirects": 27
+        },
+        {
+          "core": 2,
+          "cycles": 1472,
+          "retired": 323,
+          "memory_stalls": 1047,
+          "load_stalls": 41,
+          "redirects": 28
+        },
+        {
+          "core": 3,
+          "cycles": 1473,
+          "retired": 323,
+          "memory_stalls": 1048,
+          "load_stalls": 41,
+          "redirects": 28
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 12,
+      "terminal_cause": 11,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 2725,
+          "retired": 319,
+          "memory_stalls": 2308,
+          "load_stalls": 35,
+          "redirects": 29
+        },
+        {
+          "core": 1,
+          "cycles": 2727,
+          "retired": 320,
+          "memory_stalls": 2311,
+          "load_stalls": 35,
+          "redirects": 28
+        },
+        {
+          "core": 2,
+          "cycles": 2771,
+          "retired": 320,
+          "memory_stalls": 2355,
+          "load_stalls": 35,
+          "redirects": 28
+        },
+        {
+          "core": 3,
+          "cycles": 2772,
+          "retired": 320,
+          "memory_stalls": 2356,
+          "load_stalls": 35,
+          "redirects": 28
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 13,
+      "terminal_cause": 4,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 1484,
+          "retired": 323,
+          "memory_stalls": 1040,
+          "load_stalls": 44,
+          "redirects": 36
+        },
+        {
+          "core": 1,
+          "cycles": 1490,
+          "retired": 323,
+          "memory_stalls": 1046,
+          "load_stalls": 44,
+          "redirects": 36
+        },
+        {
+          "core": 2,
+          "cycles": 1494,
+          "retired": 323,
+          "memory_stalls": 1050,
+          "load_stalls": 44,
+          "redirects": 36
+        },
+        {
+          "core": 3,
+          "cycles": 1527,
+          "retired": 323,
+          "memory_stalls": 1083,
+          "load_stalls": 44,
+          "redirects": 36
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 14,
+      "terminal_cause": 6,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 2443,
+          "retired": 313,
+          "memory_stalls": 2022,
+          "load_stalls": 35,
+          "redirects": 34
+        },
+        {
+          "core": 1,
+          "cycles": 2496,
+          "retired": 313,
+          "memory_stalls": 2075,
+          "load_stalls": 35,
+          "redirects": 34
+        },
+        {
+          "core": 2,
+          "cycles": 2504,
+          "retired": 316,
+          "memory_stalls": 2086,
+          "load_stalls": 35,
+          "redirects": 31
+        },
+        {
+          "core": 3,
+          "cycles": 2526,
+          "retired": 316,
+          "memory_stalls": 2108,
+          "load_stalls": 35,
+          "redirects": 31
+        }
+      ]
+    },
+    {
+      "cores": 4,
+      "seed": 15,
+      "terminal_cause": 2,
+      "cores_metrics": [
+        {
+          "core": 0,
+          "cycles": 1200,
+          "retired": 320,
+          "memory_stalls": 770,
+          "load_stalls": 33,
+          "redirects": 36
+        },
+        {
+          "core": 1,
+          "cycles": 1208,
+          "retired": 320,
+          "memory_stalls": 778,
+          "load_stalls": 33,
+          "redirects": 36
+        },
+        {
+          "core": 2,
+          "cycles": 1240,
+          "retired": 320,
+          "memory_stalls": 810,
+          "load_stalls": 33,
+          "redirects": 36
+        },
+        {
+          "core": 3,
+          "cycles": 1249,
+          "retired": 320,
+          "memory_stalls": 819,
+          "load_stalls": 33,
+          "redirects": 36
+        }
+      ]
+    }
+  ]
+}

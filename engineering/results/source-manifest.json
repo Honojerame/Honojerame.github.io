@@ -1,0 +1,23 @@
+{
+  "projects/01_rv32_cluster/rtl/rv32_cluster.sv": "8ba7c7d013a474982b321fba23c2047409036dea44adce1ceb5e7877a0687023",
+  "projects/01_rv32_cluster/rtl/rv32_core.sv": "d73ae0de23e34d0381bee08bf623e6148562a40746c58f0a5a167bedbfc2ce80",
+  "projects/01_rv32_cluster/tb/tb_cluster.sv": "53e3c56039c8c24b25d3eb300889056b7b1faf53c59e8e04f494f81dc00dafc4",
+  "projects/02_systolic_int8/rtl/mac_pe.sv": "b366303740f3b69d0df79144d251469edd60959ebd0abeb6e933a14b9966b5cd",
+  "projects/02_systolic_int8/rtl/systolic_tile.sv": "57f4201ab49c0507a6f4d4ab7e11950a623ec13cf165e33e3fe38bbbc0d9ecb9",
+  "projects/02_systolic_int8/tb/tb_systolic.sv": "9608940c6951849759a3c614236a74a968bc45555e8d58e74a750b279bb2e177",
+  "projects/03_warp_memory/rtl/banked_scratchpad.sv": "cffd38ec73be36a1a01559f1d0955f64cef419f390729884f5be3f3e06f01876",
+  "projects/03_warp_memory/rtl/warp_coalescer.sv": "fc4b35c7b83d73686029ab0b92d5e4727a3e9431b123ba22b18b6c68316285a0",
+  "projects/03_warp_memory/tb/tb_coalescer.sv": "9ece309ddea68e24d8e5271714e14fd65dfccc425c5863d787efd106f76de81f",
+  "projects/03_warp_memory/tb/tb_scratchpad.sv": "08e11f0f294c87e8f15ffaccf0d401f85e7eee2bc51a67faf2b9aec435832abb",
+  "projects/04_mesh_noc/rtl/mesh_noc.sv": "75ab409e750edfc963a00be8b51b533b74f1def6da87b8adfce24e06f668b6d7",
+  "projects/04_mesh_noc/rtl/rv_fifo.sv": "fde956b21a360c87f3cd3a7a797dd29189acbd50fcd0def409d97c3d28d7b5e5",
+  "projects/04_mesh_noc/rtl/xy_router.sv": "c27226e7751b1228d7b4945bf8bfe2a3f01c438e3a094f29b27436e01b01e7b9",
+  "projects/04_mesh_noc/tb/tb_mesh.sv": "f4737d742d75c038d22cd04eb3698639bff0d5e5414b2665f617bce6a475128f",
+  "tools/check_rtl.py": "1b5ed589a767712613ae925d4e60cf30f55019b8b92eaa982a40b3802ed15fa1",
+  "tools/common.py": "3411e56391239ec91e3fca376572a9df26a3cf6dbe25ac932f6d5911e5617ca6",
+  "tools/report.py": "c66a82c03db152c4f16aa502f1a063c9a9d0a1229a44155fa7536bb46cba2c9a",
+  "tools/test_cpu.py": "4e81d9e977502acb8c8b51c9924169f73df5ea69d90ac57ce85a91f0cc27bcbc",
+  "tools/test_memory.py": "f87a24273e5f8e1b3feec8f327e6724436618a0876780f3b92b7076edf2ea92a",
+  "tools/test_noc.py": "d6ed60c4c93e6016a1c38c4a5b243add12070bcaa97bc202a555338595a31041",
+  "tools/test_systolic.py": "f6f5476c8e3318485075fa77e1d5663954cf4d07734cc05534d1986adedd1c93"
+}
