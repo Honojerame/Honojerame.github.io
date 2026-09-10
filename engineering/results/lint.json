@@ -1,0 +1,25 @@
+{
+  "mode": "lint",
+  "tops": [
+    {
+      "top": "rv32_cluster",
+      "status": "pass"
+    },
+    {
+      "top": "systolic_tile",
+      "status": "pass"
+    },
+    {
+      "top": "warp_coalescer",
+      "status": "pass"
+    },
+    {
+      "top": "banked_scratchpad",
+      "status": "pass"
+    },
+    {
+      "top": "mesh_noc",
+      "status": "pass"
+    }
+  ]
+}
